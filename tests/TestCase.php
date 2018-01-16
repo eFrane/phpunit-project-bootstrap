@@ -12,4 +12,15 @@ namespace Tests;
  */
 abstract class TestCase extends \PHPUnit\Framework\TestCase
 {
+    /**
+     * Create a data provider array from an item list
+     *
+     * @param array $items
+     **/
+    protected function listDataProvider(...$items)
+    {
+        return array_map(function ($item) {
+            return [$item];
+        }, $items);
+    }
 }
